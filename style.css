@@ -3,20 +3,20 @@
 }
 
 :root {
-  --bg: #070b14;
-  --bg-2: #0f1729;
-  --panel: rgba(17, 25, 40, 0.72);
-  --panel-strong: rgba(20, 30, 48, 0.92);
-  --surface: rgba(255, 255, 255, 0.06);
-  --surface-2: rgba(255, 255, 255, 0.03);
-  --border: rgba(255, 255, 255, 0.1);
-  --text: #edf2ff;
-  --muted: #a6b1c6;
-  --accent: #ff3b66;
-  --accent-2: #ff7d7d;
-  --success: #45d483;
-  --warning: #ffca5a;
-  --shadow: 0 18px 50px rgba(0, 0, 0, 0.38);
+  --bg: #f6f8fc;
+  --bg-2: #edf2ff;
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-strong: rgba(255, 255, 255, 0.96);
+  --surface: rgba(15, 23, 42, 0.04);
+  --surface-2: rgba(15, 23, 42, 0.02);
+  --border: rgba(15, 23, 42, 0.09);
+  --text: #111827;
+  --muted: #4b5563;
+  --accent: #ef4444;
+  --accent-2: #fb7185;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
 }
 
 html {
@@ -27,8 +27,8 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   background:
-    radial-gradient(circle at top, rgba(255, 59, 102, 0.2), transparent 28%),
-    linear-gradient(180deg, #050915, #090f1a 55%, #050914 100%);
+    radial-gradient(circle at top, rgba(239, 68, 68, 0.12), transparent 28%),
+    linear-gradient(180deg, #f8fafc, #ffffff 55%, #f1f5f9 100%);
   color: var(--text);
 }
 
@@ -84,8 +84,8 @@ button {
   display: grid;
   place-items: center;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(255, 59, 102, 0.25), rgba(255, 125, 125, 0.12));
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.14), rgba(251, 113, 133, 0.08));
+  border: 1px solid rgba(15, 23, 42, 0.06);
   font-size: 22px;
 }
 
@@ -143,13 +143,13 @@ button {
 .primary-btn {
   background: linear-gradient(135deg, var(--accent), #ff758e);
   color: white;
-  box-shadow: 0 10px 22px rgba(255, 59, 102, 0.3);
+  box-shadow: 0 10px 22px rgba(239, 68, 68, 0.22);
 }
 
 .secondary-btn {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(15, 23, 42, 0.03);
   color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .primary-btn:hover,
@@ -226,8 +226,8 @@ button {
   min-width: 130px;
   padding: 18px 14px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(15, 23, 42, 0.02);
+  border: 1px solid rgba(15, 23, 42, 0.05);
 }
 
 .mini-stats strong,
@@ -259,9 +259,9 @@ button {
   width: fit-content;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(69, 212, 131, 0.12);
-  border: 1px solid rgba(69, 212, 131, 0.34);
-  color: #b9ffd0;
+  background: rgba(22, 163, 74, 0.1);
+  border: 1px solid rgba(22, 163, 74, 0.18);
+  color: #166534;
   font-size: 0.82rem;
 }
 
@@ -270,14 +270,14 @@ button {
   height: 8px;
   border-radius: 50%;
   background: var(--success);
-  box-shadow: 0 0 0 0 rgba(69, 212, 131, 0.7);
+  box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.45);
   animation: pulse 1.6s infinite;
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(69, 212, 131, 0.7); }
-  70% { box-shadow: 0 0 0 12px rgba(69, 212, 131, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(69, 212, 131, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.45); }
+  70% { box-shadow: 0 0 0 12px rgba(22, 163, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
 }
 
 .ring-visual {
@@ -287,8 +287,8 @@ button {
   width: 190px;
   height: 190px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 59, 102, 0.18), rgba(255, 255, 255, 0.04) 48%, transparent 68%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.12), rgba(255, 255, 255, 0.7) 48%, transparent 68%);
+  border: 1px solid rgba(15, 23, 42, 0.06);
 }
 
 .ring-core {
@@ -297,9 +297,9 @@ button {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, rgba(255, 59, 102, 0.34), rgba(255, 125, 125, 0.1));
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 28px rgba(255, 59, 102, 0.45);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(251, 113, 133, 0.08));
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 0 28px rgba(239, 68, 68, 0.18);
 }
 
 .ring-core span {
@@ -366,7 +366,7 @@ button {
   display: grid;
   place-items: center;
   border-radius: 14px;
-  background: rgba(255, 59, 102, 0.12);
+  background: rgba(239, 68, 68, 0.08);
   font-size: 1.5rem;
 }
 
@@ -408,14 +408,14 @@ textarea {
   margin-top: 8px;
   padding: 0.9rem 0.95rem;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.75);
   color: var(--text);
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(15, 23, 42, 0.42);
 }
 
 .input-row,
@@ -447,8 +447,8 @@ textarea::placeholder {
 .result-card {
   padding: 16px 18px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.02);
+  border: 1px solid rgba(15, 23, 42, 0.06);
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -478,18 +478,18 @@ textarea::placeholder {
 }
 
 .badge.available {
-  background: rgba(69, 212, 131, 0.12);
-  color: #b7f0ce;
+  background: rgba(22, 163, 74, 0.12);
+  color: #166534;
 }
 
 .badge.busy {
-  background: rgba(255, 202, 90, 0.12);
-  color: #ffe4a1;
+  background: rgba(245, 158, 11, 0.12);
+  color: #92400e;
 }
 
 .badge.unavailable {
-  background: rgba(255, 59, 102, 0.12);
-  color: #ffb4c7;
+  background: rgba(239, 68, 68, 0.12);
+  color: #991b1b;
 }
 
 .list-stack {
@@ -500,8 +500,8 @@ textarea::placeholder {
 .alert-item {
   padding: 14px 16px;
   border-radius: 16px;
-  background: rgba(255, 59, 102, 0.06);
-  border: 1px solid rgba(255, 59, 102, 0.16);
+  background: rgba(239, 68, 68, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.12);
 }
 
 .alert-item strong {
@@ -527,8 +527,8 @@ textarea::placeholder {
   gap: 14px;
   padding: 14px 16px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(15, 23, 42, 0.02);
+  border: 1px solid rgba(15, 23, 42, 0.06);
 }
 
 .hospital-item small {
@@ -544,8 +544,8 @@ textarea::placeholder {
   width: fit-content;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(69, 212, 131, 0.12);
-  color: #baf9d4;
+  background: rgba(22, 163, 74, 0.12);
+  color: #166534;
   font-size: 0.72rem;
   font-weight: 700;
 }
@@ -558,9 +558,9 @@ textarea::placeholder {
   width: 100%;
   height: 330px;
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   margin-top: 16px;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(15, 23, 42, 0.02);
 }
 
 @media (max-width: 980px) {

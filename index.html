@@ -1,138 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LifeLink AI</title>
-<link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LifeLink AI - Smart blood donation and emergency response platform"
+    />
+    <title>LifeLink AI | Smart Blood Donation Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar glass">
+        <div class="brand-wrap">
+          <div class="brand-mark">🩸</div>
+          <div>
+            <span class="brand-name">LifeLink AI</span>
+            <small>Smart blood network</small>
+          </div>
+        </div>
 
-<body>
+        <nav class="nav-menu" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#donate">Donate</a>
+          <a href="#find-blood">Find Blood</a>
+          <a href="#emergency">Emergency</a>
+        </nav>
 
-<nav>
-<div class="logo">🩸 LifeLink AI</div>
+        <button class="nav-cta">Need Help</button>
+      </header>
 
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#donate">Donate</a></li>
-<li><a href="#find-blood">Find Blood</a></li>
-<li><a href="#emergency">Emergency</a></li>
-</ul>
+      <main>
+        <section class="hero" id="home">
+          <div class="hero-copy">
+            <span class="eyebrow">24/7 lifesaving network</span>
+            <h1>Save lives instantly with AI-powered blood matching.</h1>
+            <p>
+              Connect donors, hospitals, and emergency teams in real time with
+              location-aware matching and instant donor discovery.
+            </p>
 
-</nav>
+            <div class="cta-group">
+              <a href="#donate" class="primary-btn">Donate Now</a>
+              <a href="#find-blood" class="secondary-btn">Find Blood</a>
+            </div>
 
-<section class="hero" id="home">
+            <div class="mini-stats">
+              <div>
+                <strong id="totalDonorsStat">0</strong>
+                <span>Donors</span>
+              </div>
+              <div>
+                <strong id="livesSavedStat">0</strong>
+                <span>Lives Saved</span>
+              </div>
+              <div>
+                <strong id="alertsStat">0</strong>
+                <span>Emergencies</span>
+              </div>
+            </div>
+          </div>
 
-<h1>Save Lives Instantly</h1>
+          <div class="hero-panel glass">
+            <div class="status-chip">
+              <span class="pulse"></span>
+              Live emergency network
+            </div>
 
-<p>
-Smart Blood Donation &
-Emergency Response Platform
-</p>
+            <div class="ring-visual">
+              <div class="ring-core">
+                <span>O+</span>
+              </div>
+            </div>
 
-<div class="cta-group">
-<a href="#donate" class="cta-button">Donate Now</a>
-<a href="#find-blood" class="cta-button secondary">Find Blood</a>
-</div>
+            <ul class="feature-list">
+              <li>AI donor recommendation</li>
+              <li>GPS donor matching</li>
+              <li>Fast emergency response</li>
+            </ul>
+          </div>
+        </section>
 
-</section>
+        <section class="dashboard glass" id="dashboard">
+          <div class="section-heading">
+            <span class="eyebrow">Live dashboard</span>
+            <h2>Donor network overview</h2>
+          </div>
 
-<section class="stats">
+          <div class="stats-grid">
+            <article class="stat-card glass">
+              <div class="stat-icon">💉</div>
+              <div>
+                <strong id="dashboardDonors">0</strong>
+                <span>Total donors</span>
+              </div>
+            </article>
 
-<div class="card">
-<h2>12000+</h2>
-<p>Donors</p>
-</div>
+            <article class="stat-card glass">
+              <div class="stat-icon">🩺</div>
+              <div>
+                <strong id="dashboardRequests">0</strong>
+                <span>Blood requests</span>
+              </div>
+            </article>
 
-<div class="card">
-<h2>8500+</h2>
-<p>Lives Saved</p>
-</div>
+            <article class="stat-card glass">
+              <div class="stat-icon">🚑</div>
+              <div>
+                <strong id="dashboardAlerts">0</strong>
+                <span>Active alerts</span>
+              </div>
+            </article>
 
-<div class="card">
-<h2>500+</h2>
-<p>Blood Requests</p>
-</div>
+            <article class="stat-card glass">
+              <div class="stat-icon">📍</div>
+              <div>
+                <strong id="dashboardNearby">0</strong>
+                <span>Nearby donors</span>
+              </div>
+            </article>
+          </div>
+        </section>
 
-<div class="card">
-<h2>50+</h2>
-<p>Hospitals</p>
-</div>
+        <section class="content-grid">
+          <div class="panel glass" id="donate">
+            <div class="section-heading compact">
+              <span class="eyebrow">Registration</span>
+              <h2>Donor registration</h2>
+            </div>
 
-</section>
+            <form id="registerForm" novalidate>
+              <div class="input-row">
+                <label>
+                  Full name
+                  <input type="text" id="name" placeholder="Enter donor name" required />
+                </label>
+                <label>
+                  Age
+                  <input type="number" id="age" min="18" max="65" required />
+                </label>
+              </div>
 
-<section class="register" id="donate">
+              <div class="input-row">
+                <label>
+                  Blood group
+                  <select id="bloodGroup" required>
+                    <option value="">Select</option>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                  </select>
+                </label>
+                <label>
+                  Availability
+                  <select id="availability" required>
+                    <option value="available">Available</option>
+                    <option value="busy">Busy</option>
+                    <option value="unavailable">Unavailable</option>
+                  </select>
+                </label>
+              </div>
 
-<h2>Donor Registration</h2>
+              <div class="input-row">
+                <label>
+                  Phone
+                  <input type="tel" id="phone" placeholder="Phone number" required />
+                </label>
+                <label>
+                  Last donation (days ago)
+                  <input type="number" id="lastDonationDays" min="0" value="120" required />
+                </label>
+              </div>
 
-<form id="registerForm">
+              <div class="input-row">
+                <label>
+                  Location
+                  <input type="text" id="location" placeholder="City or area" required />
+                </label>
+                <label>
+                  Donations count
+                  <input type="number" id="donationsCount" min="0" value="1" required />
+                </label>
+              </div>
 
-<input type="text" id="name" placeholder="Full Name" required>
+              <div class="input-row">
+                <label>
+                  Latitude
+                  <input type="number" step="any" id="latitude" placeholder="Auto-fill using GPS" />
+                </label>
+                <label>
+                  Longitude
+                  <input type="number" step="any" id="longitude" placeholder="Auto-fill using GPS" />
+                </label>
+              </div>
 
-<input type="number" id="age" placeholder="Age" required>
+              <div class="form-actions">
+                <button type="button" class="secondary-btn inline" id="locateBtn">
+                  Use my location
+                </button>
+                <button type="submit" class="primary-btn inline">Register donor</button>
+              </div>
+            </form>
+          </div>
 
-<select id="bloodGroup">
+          <div class="panel glass" id="find-blood">
+            <div class="section-heading compact">
+              <span class="eyebrow">Discovery</span>
+              <h2>Blood donor search</h2>
+            </div>
 
-<option>A+</option>
-<option>A-</option>
-<option>B+</option>
-<option>B-</option>
-<option>O+</option>
-<option>O-</option>
-<option>AB+</option>
-<option>AB-</option>
+            <div class="search-grid">
+              <label>
+                Blood group
+                <select id="searchBlood">
+                  <option value="">Any</option>
+                  <option>A+</option>
+                  <option>A-</option>
+                  <option>B+</option>
+                  <option>B-</option>
+                  <option>O+</option>
+                  <option>O-</option>
+                  <option>AB+</option>
+                  <option>AB-</option>
+                </select>
+              </label>
 
-</select>
+              <label>
+                Location
+                <input type="text" id="searchLocation" placeholder="Search location" />
+              </label>
+            </div>
 
-<input type="text" id="phone" placeholder="Phone Number">
+            <div class="form-actions search-actions">
+              <button type="button" class="primary-btn inline" id="searchBtn">
+                Search donors
+              </button>
+              <button type="button" class="secondary-btn inline" id="nearMeBtn">
+                Find donors near me
+              </button>
+            </div>
 
-<input type="text" id="location" placeholder="Location">
+            <div id="result" class="results-panel"></div>
+          </div>
+        </section>
 
-<button type="submit">
-Register
-</button>
+        <section class="split-grid">
+          <div class="panel glass" id="emergency">
+            <div class="section-heading compact">
+              <span class="eyebrow">Emergency</span>
+              <h2>Emergency blood request</h2>
+            </div>
 
-</form>
+            <form id="emergencyForm" novalidate>
+              <label>
+                Patient name
+                <input type="text" id="requesterName" placeholder="Patient or contact" required />
+              </label>
+              <label>
+                Required blood group
+                <select id="requestBloodGroup" required>
+                  <option value="">Select</option>
+                  <option>A+</option>
+                  <option>A-</option>
+                  <option>B+</option>
+                  <option>B-</option>
+                  <option>O+</option>
+                  <option>O-</option>
+                  <option>AB+</option>
+                  <option>AB-</option>
+                </select>
+              </label>
+              <label>
+                Location
+                <input type="text" id="requestLocation" placeholder="Emergency location" required />
+              </label>
+              <label>
+                Notes
+                <textarea id="requestNotes" rows="3" placeholder="Urgency and patient details"></textarea>
+              </label>
+              <button type="submit" class="primary-btn inline">Broadcast alert</button>
+            </form>
+          </div>
 
-</section>
+          <div class="panel glass maps-panel">
+            <div class="section-heading compact">
+              <span class="eyebrow">Map view</span>
+              <h2>Nearest donor map</h2>
+            </div>
 
-<section class="search" id="find-blood">
+            <div id="map" aria-label="Google map showing nearby donors"></div>
+          </div>
+        </section>
 
-<h2>Find Blood Donor</h2>
+        <section class="bottom-grid">
+          <div class="panel glass">
+            <div class="section-heading compact">
+              <span class="eyebrow">Alerts</span>
+              <h2>Active emergency alerts</h2>
+            </div>
+            <div id="emergencyList" class="list-stack"></div>
+          </div>
 
-<select id="searchBlood">
+          <div class="panel glass">
+            <div class="section-heading compact">
+              <span class="eyebrow">Network</span>
+              <h2>Nearby hospitals</h2>
+            </div>
+            <div class="hospital-list">
+              <div class="hospital-item">
+                <div>
+                  <strong>CityCare Hospital</strong>
+                  <small>2.3 km away</small>
+                </div>
+                <span class="status live">Live</span>
+              </div>
+              <div class="hospital-item">
+                <div>
+                  <strong>Red Cross Life Center</strong>
+                  <small>5.1 km away</small>
+                </div>
+                <span class="status live">Live</span>
+              </div>
+              <div class="hospital-item">
+                <div>
+                  <strong>Metro Trauma Unit</strong>
+                  <small>8.9 km away</small>
+                </div>
+                <span class="status live">Live</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
 
-<option>O+</option>
-<option>O-</option>
-<option>A+</option>
-<option>A-</option>
-<option>B+</option>
-<option>B-</option>
-<option>AB+</option>
-<option>AB-</option>
-
-</select>
-
-<input
-type="text"
-id="searchLocation"
-placeholder="Enter Location">
-
-<button onclick="findDonor()">
-Search
-</button>
-
-<div id="result"></div>
-
-</section>
-
-<section class="emergency" id="emergency">
-<h2>Emergency Support</h2>
-<p>Need urgent help? Register as a donor or contact the emergency response team immediately.</p>
-<a href="#donate" class="cta-button secondary">Respond Now</a>
-</section>
-
-<script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+    <script>
+      const GOOGLE_MAPS_API_KEY = "AIzaSyD9VwQ6M3B3Y9J7QvX5nG2P0mR3pR";
+      window.GOOGLE_MAPS_API_KEY = GOOGLE_MAPS_API_KEY;
+    </script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=" + GOOGLE_MAPS_API_KEY + "&libraries=places"
+    ></script>
+  </body>
 </html>

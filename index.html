@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LifeLink AI</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+</head>
+
+<body>
+
+<div class="particles"></div>
+
+<nav>
+
+<div class="logo">
+🩸 LifeLink AI
+</div>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#">Donate</a></li>
+
+<li><a href="#">Find Blood</a></li>
+
+<li><a href="#">Emergency</a></li>
+
+<li><a href="#">Login</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+SAVE LIVES
+<span>INSTANTLY</span>
+</h1>
+
+<p>
+Smart Blood Donation Platform
+Connecting Donors & Patients
+In Real Time
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn-primary">
+Donate Blood
+</button>
+
+<button class="btn-secondary">
+Request Blood
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="card">
+
+<h2>12,450</h2>
+
+<p>Registered Donors</p>
+
+</div>
+
+<div class="card">
+
+<h2>8,920</h2>
+
+<p>Lives Saved</p>
+
+</div>
+
+<div class="card">
+
+<h2>356</h2>
+
+<p>Requests</p>
+
+</div>
+
+<div class="card">
+
+<h2>18</h2>
+
+<p>Emergency Cases</p>
+
+</div>
+
+</section>
+
+<section class="registration">
+
+<h2>Become A Donor</h2>
+
+<form id="registerForm">
+
+<input
+type="text"
+id="name"
+placeholder="Full Name"
+required>
+
+<input
+type="number"
+id="age"
+placeholder="Age"
+required>
+
+<select id="bloodGroup">
+
+<option value="">
+Select Blood Group
+</option>
+
+<option>A+</option>
+<option>A-</option>
+<option>B+</option>
+<option>B-</option>
+<option>O+</option>
+<option>O-</option>
+<option>AB+</option>
+<option>AB-</option>
+
+</select>
+
+<input
+type="text"
+id="phone"
+placeholder="Phone Number">
+
+<input
+type="text"
+id="location"
+placeholder="Location">
+
+<button type="submit">
+
+Register Donor
+
+</button>
+
+</form>
+
+</section>
+
+<section class="search">
+
+<h2>Find Blood Donor</h2>
+
+<select id="searchBlood">
+
+<option>O+</option>
+<option>O-</option>
+<option>A+</option>
+<option>A-</option>
+<option>B+</option>
+<option>B-</option>
+<option>AB+</option>
+<option>AB-</option>
+
+</select>
+
+<button onclick="findDonor()">
+
+Find
+
+</button>
+
+<div id="result"></div>
+
+</section>
+
+<footer>
+
+<h3>LifeLink AI 2026</h3>
+
+<p>
+Every Drop Saves A Life
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

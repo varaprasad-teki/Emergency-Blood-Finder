@@ -40,6 +40,12 @@ gap:30px;
 nav a{
 text-decoration:none;
 color:white;
+transition:color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover{
+color:#ff2e63;
+transform:translateY(-2px);
 }
 
 .hero{
@@ -68,17 +74,34 @@ margin-top:30px;
 .cta-button{
 display:inline-block;
 padding:15px 30px;
-background:#ff2e63;
+background:linear-gradient(135deg, #ff2e63, #ff5c8a);
 border:none;
 color:white;
 border-radius:10px;
 cursor:pointer;
 text-decoration:none;
 font-weight:bold;
+box-shadow:0 8px 20px rgba(255, 46, 99, 0.35);
+transition:transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.cta-button:hover {
+transform:translateY(-3px) scale(1.02);
+box-shadow:0 12px 28px rgba(255, 46, 99, 0.5);
+filter:brightness(1.08);
+}
+
+.cta-button:active {
+transform:translateY(0);
 }
 
 .cta-button.secondary {
-background:#333;
+background:linear-gradient(135deg, #2b2b2b, #444);
+box-shadow:0 8px 20px rgba(255,255,255,0.08);
+}
+
+.cta-button.secondary:hover {
+box-shadow:0 12px 28px rgba(255,255,255,0.15);
 }
 
 .stats{
@@ -126,6 +149,13 @@ color:white;
 border:none;
 border-radius:10px;
 cursor:pointer;
+transition:transform 0.3s ease, filter 0.3s ease;
+}
+
+form button:hover,
+.search button:hover {
+transform:translateY(-2px);
+filter:brightness(1.1);
 }
 
 .search{
@@ -141,6 +171,7 @@ border:none;
 border-radius:10px;
 margin-left:10px;
 cursor:pointer;
+transition:transform 0.3s ease, filter 0.3s ease;
 }
 
 .emergency{

@@ -1,9 +1,11 @@
-let donors = [];
+let donors =
+JSON.parse(
+localStorage.getItem("donors")
+) || [];
 
 document
 .getElementById("registerForm")
-.addEventListener("submit", function(e)
-{
+.addEventListener("submit", function(e){
 
 e.preventDefault();
 
@@ -33,7 +35,9 @@ localStorage.setItem(
 JSON.stringify(donors)
 );
 
-alert("Donor Registered Successfully");
+alert(
+"Donor Registered Successfully"
+);
 
 this.reset();
 
@@ -41,41 +45,64 @@ this.reset();
 
 function findDonor()
 {
-
 let blood =
-document.getElementById("searchBlood").value;
+document.getElementById(
+"searchBlood"
+).value;
+
+let location =
+document.getElementById(
+"searchLocation"
+).value.toLowerCase();
 
 let data =
-JSON.parse(localStorage.getItem("donors")) || [];
+JSON.parse(
+localStorage.getItem("donors")
+) || [];
 
-let result =
-data.filter(
-d => d.blood === blood
+let result = data.filter(
+d=>
+
+d.blood === blood &&
+
+d.location
+.toLowerCase()
+.includes(location)
+
 );
 
 let html =
 "<h3>Available Donors</h3>";
 
+if(result.length===0)
+{
+html +=
+"<p>No Donors Found</p>";
+}
+
 result.forEach(d=>{
 
 html += `
-<div class="donor">
+
+<div class="donorCard">
 
 <h4>${d.name}</h4>
 
-<p>${d.blood}</p>
+<p>Blood : ${d.blood}</p>
 
-<p>${d.location}</p>
+<p>Age : ${d.age}</p>
 
-<p>${d.phone}</p>
+<p>Phone : ${d.phone}</p>
+
+<p>Location : ${d.location}</p>
 
 </div>
+
 `;
 
 });
 
-document.getElementById(
-"result"
-).innerHTML = html;
-
+document
+.getElementById("result")
+.innerHTML = html;
 }

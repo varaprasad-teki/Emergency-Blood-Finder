@@ -5,6 +5,10 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
+html {
+scroll-behavior: smooth;
+}
+
 body{
 background:#050505;
 color:white;
@@ -16,6 +20,9 @@ justify-content:space-between;
 align-items:center;
 padding:20px 50px;
 background:#111;
+position:sticky;
+top:0;
+z-index:10;
 }
 
 .logo{
@@ -50,14 +57,21 @@ font-size:20px;
 color:#ccc;
 }
 
-.hero button{
+.cta-button{
 margin-top:30px;
+display:inline-block;
 padding:15px 30px;
 background:#ff2e63;
 border:none;
 color:white;
 border-radius:10px;
 cursor:pointer;
+text-decoration:none;
+font-weight:bold;
+}
+
+.cta-button.secondary {
+margin-top:20px;
 }
 
 .stats{
@@ -120,6 +134,23 @@ border:none;
 border-radius:10px;
 margin-left:10px;
 cursor:pointer;
+}
+
+.emergency{
+text-align:center;
+padding:60px 20px 100px;
+background:#111;
+}
+
+.emergency h2 {
+margin-bottom:15px;
+font-size:36px;
+color:#ff2e63;
+}
+
+.emergency p {
+color:#ccc;
+margin-bottom:10px;
 }
 
 #result{

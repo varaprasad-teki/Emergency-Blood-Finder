@@ -13,15 +13,15 @@
 <div class="logo">🩸 LifeLink AI</div>
 
 <ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Donate</a></li>
-<li><a href="#">Find Blood</a></li>
-<li><a href="#">Emergency</a></li>
+<li><a href="#home">Home</a></li>
+<li><a href="#donate">Donate</a></li>
+<li><a href="#find-blood">Find Blood</a></li>
+<li><a href="#emergency">Emergency</a></li>
 </ul>
 
 </nav>
 
-<section class="hero">
+<section class="hero" id="home">
 
 <h1>Save Lives Instantly</h1>
 
@@ -30,7 +30,7 @@ Smart Blood Donation &
 Emergency Response Platform
 </p>
 
-<button>Donate Now</button>
+<a href="#donate" class="cta-button">Donate Now</a>
 
 </section>
 
@@ -58,7 +58,7 @@ Emergency Response Platform
 
 </section>
 
-<section class="register">
+<section class="register" id="donate">
 
 <h2>Donor Registration</h2>
 
@@ -93,7 +93,7 @@ Register
 
 </section>
 
-<section class="search">
+<section class="search" id="find-blood">
 
 <h2>Find Blood Donor</h2>
 
@@ -121,6 +121,12 @@ Search
 
 <div id="result"></div>
 
+</section>
+
+<section class="emergency" id="emergency">
+<h2>Emergency Support</h2>
+<p>Need urgent help? Register as a donor or contact the emergency response team immediately.</p>
+<a href="#donate" class="cta-button secondary">Respond Now</a>
 </section>
 
 <script src="script.js"></script>

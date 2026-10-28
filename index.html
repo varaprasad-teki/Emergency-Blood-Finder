@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="LifeLink AI - Smart blood donation and emergency response platform"
+      content="Emergency Blood Finder connects donors, hospitals, and emergency teams in real time to save lives."
     />
-    <title>LifeLink AI | Smart Blood Donation Platform</title>
+    <title>Emergency Blood Finder | 2026 Emergency Response</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,9 +21,9 @@
       <header class="topbar glass">
         <div class="brand-wrap">
           <div class="brand-mark">🩸</div>
-          <div>
-            <span class="brand-name">LifeLink AI</span>
-            <small>Smart blood network</small>
+          <div class="brand-copy">
+            <span class="brand-name">Emergency Blood Finder</span>
+            <small>2026 lifesaving network</small>
           </div>
         </div>
 
@@ -35,36 +35,37 @@
           <a href="#emergency">Emergency</a>
         </nav>
 
-        <button class="nav-cta">Need Help</button>
+        <a class="nav-cta" href="#emergency">Request blood</a>
       </header>
 
       <main>
         <section class="hero" id="home">
           <div class="hero-copy">
-            <span class="eyebrow">24/7 lifesaving network</span>
-            <h1>Save lives instantly with AI-powered blood matching.</h1>
+            <span class="eyebrow">24/7 emergency response</span>
+            <h1>Find a compatible donor before the next minute is lost.</h1>
             <p>
-              Connect donors, hospitals, and emergency teams in real time with
-              location-aware matching and instant donor discovery.
+              Real-time blood matching for hospitals, caregivers, and volunteers.
+              Emergency Blood Finder brings urgent requests, available donors, and
+              nearby response teams into one smart network.
             </p>
 
             <div class="cta-group">
-              <a href="#donate" class="primary-btn">Donate Now</a>
-              <a href="#find-blood" class="secondary-btn">Find Blood</a>
+              <a href="#donate" class="primary-btn">Become a donor</a>
+              <a href="#find-blood" class="secondary-btn">Search donors</a>
             </div>
 
             <div class="mini-stats">
               <div>
                 <strong id="totalDonorsStat">0</strong>
-                <span>Donors</span>
+                <span>Live donors</span>
               </div>
               <div>
                 <strong id="livesSavedStat">0</strong>
-                <span>Lives Saved</span>
+                <span>Lives saved</span>
               </div>
               <div>
                 <strong id="alertsStat">0</strong>
-                <span>Emergencies</span>
+                <span>Active alerts</span>
               </div>
             </div>
           </div>
@@ -72,26 +73,42 @@
           <div class="hero-panel glass">
             <div class="status-chip">
               <span class="pulse"></span>
-              Live emergency network
+              Network online
             </div>
 
-            <div class="ring-visual">
-              <div class="ring-core">
-                <span>O+</span>
+            <div class="network-card">
+              <span class="network-label">Nearest compatible match</span>
+              <strong>O+</strong>
+              <div class="network-row">
+                <span>Median response</span>
+                <b>4 min</b>
+              </div>
+              <div class="network-row">
+                <span>Donors nearby</span>
+                <b>18 active</b>
               </div>
             </div>
 
-            <ul class="feature-list">
-              <li>AI donor recommendation</li>
-              <li>GPS donor matching</li>
-              <li>Fast emergency response</li>
-            </ul>
+            <div class="signal-grid">
+              <div class="signal-card">
+                <span>Available</span>
+                <strong>87</strong>
+              </div>
+              <div class="signal-card">
+                <span>Hospitals</span>
+                <strong>12</strong>
+              </div>
+              <div class="signal-card">
+                <span>Critical</span>
+                <strong>03</strong>
+              </div>
+            </div>
           </div>
         </section>
 
         <section class="dashboard glass" id="dashboard">
           <div class="section-heading">
-            <span class="eyebrow">Live dashboard</span>
+            <span class="eyebrow">Live performance</span>
             <h2>Donor network overview</h2>
           </div>
 
@@ -127,6 +144,51 @@
                 <span>Nearby donors</span>
               </div>
             </article>
+          </div>
+        </section>
+
+        <section class="feature-grid">
+          <article class="feature-card glass">
+            <div class="feature-icon">⚡</div>
+            <h3>Instant donor matching</h3>
+            <p>Label compatibility, availability, and travel time to shortlist the right person in seconds.</p>
+          </article>
+
+          <article class="feature-card glass">
+            <div class="feature-icon">📡</div>
+            <h3>Live emergency alerts</h3>
+            <p>Broadcast urgent requests across hospitals, donor groups, and nearby volunteers in real time.</p>
+          </article>
+
+          <article class="feature-card glass">
+            <div class="feature-icon">🧠</div>
+            <h3>Smart response routing</h3>
+            <p>Prioritize high-urgency cases using donor health, geography, and last donation intervals.</p>
+          </article>
+        </section>
+
+        <section class="workflow glass" id="how-it-works">
+          <div class="section-heading">
+            <span class="eyebrow">How it works</span>
+            <h2>From alert to match in minutes</h2>
+          </div>
+
+          <div class="workflow-grid">
+            <div class="step-card">
+              <span class="step-no">01</span>
+              <h3>Log the emergency</h3>
+              <p>Submit the patient requirement, blood type, and precise location.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-no">02</span>
+              <h3>Match donors</h3>
+              <p>Filter by blood compatibility, travel radius, and readiness status.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-no">03</span>
+              <h3>Notify responders</h3>
+              <p>Alert the most suitable donor or hospital unit with instant contact details.</p>
+            </div>
           </div>
         </section>
 
@@ -349,13 +411,12 @@
 
     <script src="script.js"></script>
     <script>
-      const GOOGLE_MAPS_API_KEY = "AIzaSyD9VwQ6M3B3Y9J7QvX5nG2P0mR3pR";
-      window.GOOGLE_MAPS_API_KEY = GOOGLE_MAPS_API_KEY;
+      window.GOOGLE_MAPS_API_KEY = "demo";
     </script>
     <script
       async
       defer
-      src="https://maps.googleapis.com/maps/api/js?key=" + GOOGLE_MAPS_API_KEY + "&libraries=places"
+      src="https://maps.googleapis.com/maps/api/js?key=demo&libraries=places"
     ></script>
   </body>
 </html>

@@ -111,28 +111,18 @@ function renderStats() {
   const donors = loadDonors();
   const emergencies = loadEmergencies();
 
-  const totalDonors = document.getElementById("totalDonorsStat");
-  const dashboardDonors = document.getElementById("dashboardDonors");
-  const dashboardRequests = document.getElementById("dashboardRequests");
-  const dashboardAlerts = document.getElementById("dashboardAlerts");
-  const alertsStat = document.getElementById("alertsStat");
-  const livesSavedStat = document.getElementById("livesSavedStat");
-  const dashboardNearby = document.getElementById("dashboardNearby");
-
-  if (totalDonors) totalDonors.textContent = donors.length;
-  if (dashboardDonors) dashboardDonors.textContent = donors.length;
-  if (dashboardRequests) dashboardRequests.textContent = donors.length + 12;
-  if (dashboardAlerts) dashboardAlerts.textContent = emergencies.length;
-  if (alertsStat) alertsStat.textContent = emergencies.length;
-  if (livesSavedStat) livesSavedStat.textContent = 18500 + donors.length * 18;
-  if (dashboardNearby) dashboardNearby.textContent = donors.filter(d => d.availability === "available").length;
+  document.getElementById("totalDonorsStat").textContent = donors.length;
+  document.getElementById("dashboardDonors").textContent = donors.length;
+  document.getElementById("dashboardRequests").textContent = donors.length + 12;
+  document.getElementById("dashboardAlerts").textContent = emergencies.length;
+  document.getElementById("alertsStat").textContent = emergencies.length;
+  document.getElementById("livesSavedStat").textContent = 18500 + donors.length * 18;
+  document.getElementById("dashboardNearby").textContent = donors.filter(d => d.availability === "available").length;
 }
 
 function renderEmergencyList() {
   const emergencies = loadEmergencies();
   const list = document.getElementById("emergencyList");
-
-  if (!list) return;
 
   if (!emergencies.length) {
     list.innerHTML = '<div class="alert-item"><strong>No emergency alerts</strong><p>All systems are stable.</p></div>';
@@ -159,7 +149,6 @@ function setStatusBadge(status) {
 
 function renderSearchResults(results) {
   const resultContainer = document.getElementById("result");
-  if (!resultContainer) return;
 
   if (!results.length) {
     resultContainer.innerHTML = `
@@ -272,12 +261,12 @@ function initMap() {
 
   const key = window.GOOGLE_MAPS_API_KEY;
   if (!key || key.includes("YOUR") || key === "demo") {
-    mapContainer.innerHTML = "<div style='display:grid;place-items:center;height:100%;color:#a6b1c6;'>Map preview is ready. Add a valid Google Maps key to enable live locations.</div>";
+    mapContainer.innerHTML = "<div style='display:grid;place-items:center;height:100%;color:#a6b1c6;'>Google Maps is unavailable because no valid API key is configured.</div>";
     return;
   }
 
   if (typeof google === "undefined" || !google.maps) {
-    mapContainer.innerHTML = "<div style='display:grid;place-items:center;height:100%;color:#a6b1c6;'>Loading map…</div>";
+    mapContainer.innerHTML = "<div style='display:grid;place-items:center;height:100%;color:#a6b1c6;'>Loading Google Maps…</div>";
     return;
   }
 
@@ -350,10 +339,8 @@ function getUserLocation(callback) {
         latitude: position.coords.latitude,
         longitude: position.coords.longitude
       };
-      const latitudeField = document.getElementById("latitude");
-      const longitudeField = document.getElementById("longitude");
-      if (latitudeField) latitudeField.value = coords.latitude;
-      if (longitudeField) longitudeField.value = coords.longitude;
+      document.getElementById("latitude").value = coords.latitude;
+      document.getElementById("longitude").value = coords.longitude;
       callback(coords);
     },
     () => {
@@ -457,17 +444,13 @@ function handleEmergencyRequest(event) {
 }
 
 function registerEventHandlers() {
-  const registerForm = document.getElementById("registerForm");
-  const searchBtn = document.getElementById("searchBtn");
-  const nearMeBtn = document.getElementById("nearMeBtn");
-  const locateBtn = document.getElementById("locateBtn");
-  const emergencyForm = document.getElementById("emergencyForm");
-
-  if (registerForm) registerForm.addEventListener("submit", handleRegistration);
-  if (searchBtn) searchBtn.addEventListener("click", handleSearch);
-  if (nearMeBtn) nearMeBtn.addEventListener("click", handleNearMe);
-  if (locateBtn) locateBtn.addEventListener("click", () => getUserLocation(() => {}));
-  if (emergencyForm) emergencyForm.addEventListener("submit", handleEmergencyRequest);
+  document.getElementById("registerForm").addEventListener("submit", handleRegistration);
+  document.getElementById("searchBtn").addEventListener("click", handleSearch);
+  document.getElementById("nearMeBtn").addEventListener("click", handleNearMe);
+  document.getElementById("locateBtn").addEventListener("click", () => {
+    getUserLocation(() => {});
+  });
+  document.getElementById("emergencyForm").addEventListener("submit", handleEmergencyRequest);
 }
 
 function bootstrap() {
@@ -480,121 +463,3 @@ function bootstrap() {
 
 window.addEventListener("DOMContentLoaded", bootstrap);
 window.addEventListener("load", initMap);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
